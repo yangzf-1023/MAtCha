@@ -66,11 +66,12 @@ We believe MAtCha will serve as a foundational tool for any visual application i
 </details><br>
 
 <details>
-<summary><span style="font-weight: bold;">To-do list</span></summary>
+<summary><span style="font-weight: bold;">To-do list (Bugs and new features)</span></summary>
 <ul>
-  <li><b>Initial charts selection:</b> For dense-view reconstruction, add a script to automatically select a good subset of images to convert into initial charts. The initial charts just need to cover the scene well, so a simple greedy approach should be sufficient.</li>
-  <li><b>Evaluation:</b> Add evaluation scripts.</li>
-  <li><b>gsplat support:</b> Make the code compatible with gsplat's rasterizer from the Nerfstudio team.</li>
+  <li><b>(Bug) If input images are too small:</b> If the largest side of the input images is less than 512 pixels, the code currently returns an error. This should be fixed.</li>
+  <li><b>(New feature) Initial charts selection:</b> For dense-view reconstruction, add a script to automatically select a good subset of images to convert into initial charts. The initial charts just need to cover the scene well, so a simple greedy approach should be sufficient.</li>
+  <li><b>(New feature) Evaluation:</b> Add evaluation scripts.</li>
+  <li><b>(New feature) gsplat support:</b> Make the code compatible with gsplat's rasterizer from the Nerfstudio team.</li>
 </ul>
 </details>
 
