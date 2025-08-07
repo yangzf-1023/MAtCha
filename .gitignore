@@ -2,6 +2,7 @@
 *.pth
 *.pkl
 output*
+source*
 *.slurm
 *.pyc
 *.ply

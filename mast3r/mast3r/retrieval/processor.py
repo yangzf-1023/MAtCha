@@ -13,6 +13,7 @@ from mast3r.model import AsymmetricMASt3R
 from mast3r.retrieval.model import RetrievalModel, extract_local_features
 
 try:
+    import faiss.contrib.torch_utils
     import faiss
     faiss.StandardGpuResources()  # when loading the checkpoint, it will try to instanciate FaissGpuL2Index
     print("LOADING FAISS GPU")
@@ -97,6 +98,7 @@ class Retriever(object):
                                      'search': {'topk': None},
                                      'similarity': {'similarity_threshold': 0.0, 'alpha': 3.0}}}
         asmk_params['train_codebook']['codebook']['size'] = ckpt_args.nclusters
+        print(f'Loading ASMK codebook from {cache_codebook_fname}, which has {ckpt_args.nclusters} clusters')
         self.asmk = asmk_method.ASMKMethod.initialize_untrained(asmk_params)
         self.asmk = self.asmk.train_codebook(None, cache_path=cache_codebook_fname)
 
